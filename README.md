@@ -5,4 +5,4 @@ Stub out the basic framework for a set of PQC readiness tracking pages to be hos
 Open questions:
 
 * What license should be used?
-* How do we carve up the space? Proposed: Cryptography Libraries / Tools, Cloud Services, HSMs, Networking Devices, Software
+* How do we carve up the space? Proposed: Cryptography Libraries / Tools, Cloud Services, HSMs, Networking Devices, Operating Systems, Software
