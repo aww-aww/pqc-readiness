@@ -16,7 +16,7 @@ These trackers are a crowdsourced effort; please contribute by updating the stat
 | Bouncy Castle	| Java >= 1.79, C# >= 2.5.0 |	🟢 Ready | Java, C#	| ML-KEM, ML-DSA, SLH-DSA	| Full support for finalized NIST standards was added in these versions (released late 2024).
 | Conscrypt| ? | 🟢 Ready | Java | ? | | |
 | Crypto++	| N/A	| 🔴 Not Supported | C++ | None | A community fork called CryptoPP-Modern has added experimental support |
-| Go crypto | [>=1.25.1](https://pkg.go.dev/crypto/mlkem@go1.25.1) | 🟢 Ready | Go | | https://github.com/golang/go/issues/64537 |
+| Go crypto | [>=1.24](https://pkg.go.dev/crypto/mlkem@go1.24) | 🟢 Ready | Go | ML-KEM, ML-DSA, SLH-DSA | https://github.com/golang/go/issues/64537 |
 | libsodium	| N/A |	🔴 Not Supported | C | None | Historically focused on well-established classical primitives and has not yet integrated native PQC algorithms into the core library |
 | OpenSSL | [>=3.5](https://openssl-library.org/post/2025-04-08-openssl-35-final-release/) | 🟢 Ready | C | | Native support for ML-KEM-512/768/1024 was introduced in [OpenSSL 3.5](https://openssl.foundation/news/the-features-of-3-5-post-quantum-cryptography). Older versions require the third-party Open Quantum Safe (OQS) provider |
 | PyCa/cryptography |	N/A |	🔴 Not Supported | Python | None | The standard Python cryptography package does not yet have native support. Users typically use wrappers like pyoqs or wolfcrypt-py |
