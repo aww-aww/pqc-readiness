@@ -1,6 +1,7 @@
 # pqc-readiness
 Stub out the basic framework for a set of PQC readiness tracking pages to be hosted under the Post-Quantum Cryptography Alliance (PQCA) repo
 
+The official location for this information is: https://github.com/PQCA/wg-readiness-tracking
 
 Open questions:
 
