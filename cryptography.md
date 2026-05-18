@@ -20,13 +20,12 @@ These trackers are a crowdsourced effort; please contribute by updating the stat
 | Crypto++	| N/A	| 🔴 Not Supported | C++ | None | A community fork called CryptoPP-Modern has added experimental support |
 | Go crypto | [>=1.24](https://pkg.go.dev/crypto/mlkem@go1.24) | 🟡 In Progress | Go | ML-KEM | PQC roadmap at https://github.com/golang/go/issues/64537. ML-DSA planned for go [1.27](https://github.com/golang/go/issues/77626). No support for ML-KEM-512. No plan for SLH-DSA but see [go-slh-dsa](https://github.com/trailofbits/go-slh-dsa)|
 | libsodium	| N/A |	🔴 Not Supported | C | None | Historically focused on well-established classical primitives and has not yet integrated native PQC algorithms into the core library |
+| mbedTLS | - | 🔴 Not Started | C | None | No support, yet. Crypto API [Extension PQC 1.4](https://arm-software.github.io/psa-api/crypto/1.4/ext-pqc/) available.|
+| noble cryptography | [0.6.1](https://github.com/paulmillr/noble-post-quantum/releases/tag/0.6.1) | 🟢 Ready | TypeScript / JS  | ML-KEM, ML-DSA, SLH-DSA, HSS/LMS, Falcon (Round 3) |  Support for hybids (Concrete, XWing, KitchenSink)|
 | OpenSSL | [>=3.5](https://openssl-library.org/post/2025-04-08-openssl-35-final-release/) | 🟢 Ready | C | | Native support for ML-KEM-512/768/1024, ML-DSA and SLH-DSA was introduced in [OpenSSL 3.5](https://openssl.foundation/news/the-features-of-3-5-post-quantum-cryptography). Older versions require the third-party Open Quantum Safe (OQS) provider |
 | PyCa/cryptography |	N/A |	🔴 Not Supported | Python | None | The standard Python cryptography package does not yet have native support. Users typically use wrappers like pyoqs or wolfcrypt-py |
 | ring |	N/A |	🔴 Not Supported	| Rust |	None	| The ring crate does not support ML-KEM. Rust developers often use ml-kem (from the RustCrypto project) or aws-lc-rs for PQC support |
 | wolfSSL	| >=v5.0.0 (via liboqs), v? for native support |	🟢 Ready | C | ML-KEM, ML-DSA | 	|
-| mbedTLS | - | 🔴 Not Started | C | None | No support, yet. Crypto API [Extension PQC 1.4](https://arm-software.github.io/psa-api/crypto/1.4/ext-pqc/) available.|
-| noble cryptography | [0.6.1](https://github.com/paulmillr/noble-post-quantum/releases/tag/0.6.1) | 🟢 Ready | TypeScript / JS  | ML-KEM, ML-DSA, SLH-DSA, HSS/LMS, Falcon (Round 3) |  Support for hybids (Concrete, XWing, KitchenSink)|
-
 
 Status: 🟢 Ready / 🟡 In Progress / 🔴 Not Started
 
