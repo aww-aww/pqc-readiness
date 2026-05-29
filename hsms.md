@@ -21,7 +21,7 @@ These pages track the state of Post-Quantum Cryptography (PQC) readiness for com
 | Utimaco u.trust General Purpose HSM (Se-Series & CSe-Series)| Quantum Protect Package | 🟢 Ready | 🟢 Ready | HSS, LMS, ML-DSA, ML-KEM, XMSS | offers a free  export-compliant Quantum Protect Simulator. |
 | Yubico YubiHSM 2 | v2.4+ | 🟡 In Progress | 🟣 Will not support | PQC in pilot testing | Designed for low-volume root protection. |
 | Futurex Excrypt SCP / Legacy Vectera | Older non-containerized lines | 🟣 Will not support | 🟣 Will not support | None | Legacy payment processing architectures built tightly around 3DES and RSA operations. Cannot support hybrid configurations or PQC keys without a forklift upgrade |
-| Futurex Excrypt | Container-based Multi-Tenant FW | 🟢 Ready | 🟡 In Progress | ML-KEM, ML-DSA, LMS, HSS, XMSS | The futurex website makes it challenging to get clear details, some of this may be incorrect. |
+| Futurex Excrypt | Container-based Multi-Tenant FW | 🟢 Ready | 🟡 In Progress | HSS, LMS, ML-DSA, ML-KEM, XMSS | The futurex website makes it challenging to get clear details, some of this may be incorrect. |
 | i4p Trident HSM | Quantum-Safe Package | 🟢 Ready | 🟡 In Progress | SLH-DSA | Common Criteria EAL4+ / eIDAS-listed network appliance. |
 
 
