@@ -12,10 +12,12 @@ These pages track the state of Post-Quantum Cryptography (PQC) readiness for com
 | Crypto4A QxHSM™ (Blade Modules / Chassis) | Quantum-Safe FW Architecture | 🟢 Ready | 🟡 [In Progress](https://csrc.nist.gov/Projects/cryptographic-module-validation-program/modules-in-process/modules-in-process-list) |  Classic McEliece, HSS (max 8 subtrees), LMS, ML-DSA, ML-KEM, SHA2/SHAKE, SLH-DSA, XMSS | Modular 5th-generation HSM. Crypto agility for algorithm variations; FIPS 140-3 Level 3 evaluation in CMVP comment resolution. |
 | Entrust nShield 5 / nShield Connect / nShield Solo | Firmware v13+ | 🟢 Ready | 🟡 In Progress | LMS, ML-DSA, ML-KEM, SLH-DSA, XMSS | FPGA acceleration for  classical, hybrid, and PQC. |
 | Entrust nShield Connect+ / Solo+ (Legacy Non-XC M-Series) | All v11 / v12 firmware | 🟣 Will not support | 🟣 Will not support | None | Legacy hardware builds lack the memory and processing capacity required to host the v13+ Security World architecture. No firmware upgrade path to PQC available. |
+| Eviden (Atos) | Trustway Proteccio | 🟢 Ready | EAL4+ | ML-DSA, ML-KEM, SLH-DSA | EU focused |
 | Fortanix FX2200 | ? | Unknown | 🟢 Ready | Unknown | Unknown |
 | Futurex Excrypt SCP / Legacy Vectera | Older non-containerized lines | 🟣 Will not support | 🟣 Will not support | None | Legacy payment processing architectures built tightly around 3DES and RSA operations. Cannot support hybrid configurations or PQC keys without a forklift upgrade |
 | Futurex Excrypt | Container-based Multi-Tenant FW | 🟢 Ready | 🟡 In Progress | HSS, LMS, ML-DSA, ML-KEM, XMSS | The futurex website makes it challenging to get clear details, some of this may be incorrect. |
 | i4p Trident HSM | Quantum-Safe Package | 🟢 Ready | 🟡 In Progress | SLH-DSA | Common Criteria EAL4+ / eIDAS-listed network appliance. |
+| IBM | Crypto Express (CEX8S) / IBM 4769 | ? | 🟢 Ready | ML-DSA & LMS/XMSS | Mainframe Transaction Signing |
 | Marvell LiquidSecurity 2 (LS2) | Firmware v10.0+ | 🟡 In Progress | 🟢 Ready | ML-DSA, ML-KEM | PQC algorithms are currently supported in non-FIPS mode via the LS-SW-PQC software pack. |
 Marvell LiquidSecurity 1 (LS1) / Cavium NITROX | N/A | 🔴 Not Started	| 🟢 Ready | None | Legacy models (certified to FIPS 140-2 and 140-3 Level 3); no PQC support has been announced |
 | Thales Luna Network HSM 7 / PCIe HSM 7 | Firmware 7.7.0+ (Luna Client 10.7.1+) | 🟢 Ready | 🟢 Ready | LMS, ML-DSA, ML-KEM, SLH-DSA, XMSS | Accessible natively via core firmware updates or via the Luna PQC Functionality Module (FM) Toolkit 3.1. |
