@@ -11,6 +11,7 @@ These pages track the state of Post-Quantum Cryptography (PQC) readiness for com
 | [Example HSM] | 1.0 | 🔴 Not Started | 🟡 In Progress | ML-KEM, ML-DSA, ... | Summary or link to issue/PR |
 | Crypto4A QxHSM™ (Blade Modules / Chassis) | Quantum-Safe FW Architecture | 🟢 Ready | 🟡 [In Progress](https://csrc.nist.gov/Projects/cryptographic-module-validation-program/modules-in-process/modules-in-process-list) |  Classic McEliece, HSS (max 8 subtrees), LMS, ML-DSA, ML-KEM, SHA2/SHAKE, SLH-DSA, XMSS | Modular 5th-generation HSM. Crypto agility for algorithm variations; FIPS 140-3 Level 3 evaluation in CMVP comment resolution. |
 | Entrust nShield 5 / nShield Connect / nShield Solo | Firmware v13+ | 🟢 Ready | 🟡 In Progress | LMS, ML-DSA, ML-KEM, SLH-DSA, XMSS | FPGA acceleration for  classical, hybrid, and PQC. |
+| nShield XC (XC Connect and XC Solo) | Firmware v13+ | 🟢 Ready | 🟣 Will not support | LMS, ML-DSA, ML-KEM, SLH-DSA | No PQC acceleration. |
 | Entrust nShield Connect+ / Solo+ (Legacy Non-XC M-Series) | All v11 / v12 firmware | 🟣 Will not support | 🟣 Will not support | None | Legacy hardware builds lack the memory and processing capacity required to host the v13+ Security World architecture. No firmware upgrade path to PQC available. |
 | Eviden (Atos) | Trustway Proteccio | 🟢 Ready | EAL4+ | ML-DSA, ML-KEM, SLH-DSA | EU focused |
 | Fortanix FX2200 | ? | Unknown | 🟢 Ready | Unknown | Unknown |
