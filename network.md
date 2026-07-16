@@ -1,6 +1,20 @@
 # Network Equipment Readiness
 
-This is a first pass that was AI generated (via a combination of Gemini and Claude). It has not been human vetted in a meaningful way yet.
+This is a first pass that was AI generated (via a combination of Gemini and Claude) and then adjusted lightly. It has not been human vetted in a meaningful way yet.
+
+## Arista Networks
+
+| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **All EOS Platforms** | EOS 4.36.1F+ | **Unknown** | **Ready:** ML-KEM & X25519MLKEM768 SSL Profiles | **Partial:** AES-256 MACsec | EOS Control Plane Security allows configuring pure (MLKEM768) and hybrid (SecP256r1MLKEM768) PQC KEMs for switch management. [EOS 4.36.1F Manual, July 2026] |
+| **7800R3 Series** | EOS | **Unknown** | **Unknown** | **Partial:** 100G/400G Line-rate MACsec | Relying on classical AES-256-GCM. Hardware acceleration present but IPsec/MACsec key exchange remains classical unless managed via QKD/external key servers. [Arista 7800R3 Datasheet] |
+
+## Check Point
+
+| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Quantum Security Gateways** | R82 | **Roadmap:** SIC Crypto-agility built-in | **Unknown** | **Ready (Hybrid):** QSKE (RFC 9370/9242) ML-KEM | R82 delivers Quantum-Safe Key Exchange (QSKE) for Site-to-Site VPNs. [Check Point R82 Release Notes, Nov 2024/2025] |
+| **Quantum Gateways (SSL)** | R82.10 (EA) | **N/A** | **Ready:** X25519MLKEM768 Inspection | **N/A** | Allows passing transparently or inspecting PQC TLS. If unsupported, drops connection. [Check Point Blog, Sept 2025] |
 
 ## Cisco Systems
 
@@ -23,6 +37,28 @@ This is a first pass that was AI generated (via a combination of Gemini and Clau
 | Secure Firewall 7100 Series | FTD / FXOS | | 🟡 In Progress | Hybrid PQC | Integration for PQC VPN and telemetry in progress. |
 | Secure Firewall 3100 Series | FTD / FXOS | | 🟡 In Progress | Hybrid PQC | Next-gen cryptographic transition planned. |
 
+## F5 Networks
+
+| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **BIG-IP System** | TMOS v17.5.1+ / v21.1 | **Unknown** | **Ready:** X25519MLKEM768 | **Ready:** L7 Proxy / SSL Offload | Requires explicit TLS 1.3 configuration. Deprecated draft Kyber for NIST ML-KEM. Often deployed in front of object storage (NetApp) to stop harvesting. [F5 KB K000149577 / K000161408] |
+| **NGINX Plus** | R33+ | **Unknown** | **Ready:** ML-KEM768 (OQS) | **Ready:** L7 Proxy | Requires manual enablement in the configuration. [F5 Labs PQC Web Report] |
+
+## Fortinet
+
+| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **FortiGate NGFW** | FortiOS 8.0.0 / 7.6.6 | **Unknown** | **Ready:** HTTPS/SSH PQC algorithms | **Ready (Hybrid):** ML-KEM-512/768/1024 for IPsec | Implements RFC 9370/9242 (ADDKE). Interoperable with Cloudflare IPsec. [FortiOS 8.0 Release Notes; Cloudflare April 2026] |
+| **FortiGate (SSL Inspection)** | FortiOS 7.6.5+ | **N/A** | **Ready:** X25519MLKEM768 Deep Inspection | **N/A** | Supports hybrid PQC key exchanges in SSL deep inspection (flow mode) for Chrome 138+ compatibility. [FortiOS 7.6.5 Release Notes] |
+
+## HPE Aruba & Extreme Networks
+
+| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **HPE Aruba CX Switches** | AOS-CX | **Unknown** | **Unknown** | **Partial:** AES-256 MACsec | No public roadmap data for native ML-KEM/ML-DSA integration in AOS-CX as of mid-2026. |
+| **Extreme Networks 5420/5720** | EXOS / VOSS | **Unknown** | **Unknown** | **Partial:** AES-256 MACsec | No public roadmap data for native ML-KEM/ML-DSA integration. |
+
+
 ## Juniper Networks (HPE)
 
 | Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
@@ -42,6 +78,13 @@ This is a first pass that was AI generated (via a combination of Gemini and Clau
 | SRX4000 Series Firewalls | Junos OS | | 🟡 In Progress | Post-Quantum PPK | Post-quantum VPN security scaling. |
 | SRX1500 Firewall | Junos OS | | 🟡 In Progress | Post-Quantum PPK | Out-of-band key mechanisms and PPK mixing. |
 
+## Nokia & Ciena (Service Provider / Optical Edge)
+
+| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Nokia 7750 SR / SR OS** | SR OS / SR Linux | **Unknown** | **Unknown** | **Ready (Hybrid):** IPsec RFC 9370 & ANYsec | Tightly integrates with NetGuard Certificate Manager and supports external QKD via ETSI APIs. [Nokia PQC Application Notes, Jan 2026] |
+| **Ciena Waveserver 5** | WaveLogic 6 | **Unknown** | **Unknown** | **Ready:** L1 Optical PQC & QKD | Wire-speed Layer 1 optical encryption scaling up to 1.6Tbps supporting NIST-certified PQC algorithms and QKD system interworking. [Ciena WaveLogic 6 Specs] |
+
 ## Palo Alto Networks
 
 | Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
@@ -52,47 +95,11 @@ This is a first pass that was AI generated (via a combination of Gemini and Clau
 | PA-5400 Series NGFW | PAN-OS 12.1 Orion | | 🟢 Ready | ML-KEM, PQC KEMs | Cipher translation feature upgrades legacy app sessions. |
 | PA-3400 Series NGFW | PAN-OS 12.1 Orion | | 🟢 Ready | ML-KEM, PQC KEMs | Quantum Readine
 
-## Fortinet
+
+## Ubiquiti
 
 | Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **FortiGate NGFW** | FortiOS 8.0.0 / 7.6.6 | **Unknown** | **Ready:** HTTPS/SSH PQC algorithms | **Ready (Hybrid):** ML-KEM-512/768/1024 for IPsec | Implements RFC 9370/9242 (ADDKE). Interoperable with Cloudflare IPsec. [FortiOS 8.0 Release Notes; Cloudflare April 2026] |
-| **FortiGate (SSL Inspection)** | FortiOS 7.6.5+ | **N/A** | **Ready:** X25519MLKEM768 Deep Inspection | **N/A** | Supports hybrid PQC key exchanges in SSL deep inspection (flow mode) for Chrome 138+ compatibility. [FortiOS 7.6.5 Release Notes] |
-
-## F5 Networks
-
-| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **BIG-IP System** | TMOS v17.5.1+ / v21.1 | **Unknown** | **Ready:** X25519MLKEM768 | **Ready:** L7 Proxy / SSL Offload | Requires explicit TLS 1.3 configuration. Deprecated draft Kyber for NIST ML-KEM. Often deployed in front of object storage (NetApp) to stop harvesting. [F5 KB K000149577 / K000161408] |
-| **NGINX Plus** | R33+ | **Unknown** | **Ready:** ML-KEM768 (OQS) | **Ready:** L7 Proxy | Requires manual enablement in the configuration. [F5 Labs PQC Web Report] |
-
-## Check Point
-
-| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Quantum Security Gateways** | R82 | **Roadmap:** SIC Crypto-agility built-in | **Unknown** | **Ready (Hybrid):** QSKE (RFC 9370/9242) ML-KEM | R82 delivers Quantum-Safe Key Exchange (QSKE) for Site-to-Site VPNs. [Check Point R82 Release Notes, Nov 2024/2025] |
-| **Quantum Gateways (SSL)** | R82.10 (EA) | **N/A** | **Ready:** X25519MLKEM768 Inspection | **N/A** | Allows passing transparently or inspecting PQC TLS. If unsupported, drops connection. [Check Point Blog, Sept 2025] |
-
-## Arista Networks
-
-| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **All EOS Platforms** | EOS 4.36.1F+ | **Unknown** | **Ready:** ML-KEM & X25519MLKEM768 SSL Profiles | **Partial:** AES-256 MACsec | EOS Control Plane Security allows configuring pure (MLKEM768) and hybrid (SecP256r1MLKEM768) PQC KEMs for switch management. [EOS 4.36.1F Manual, July 2026] |
-| **7800R3 Series** | EOS | **Unknown** | **Unknown** | **Partial:** 100G/400G Line-rate MACsec | Relying on classical AES-256-GCM. Hardware acceleration present but IPsec/MACsec key exchange remains classical unless managed via QKD/external key servers. [Arista 7800R3 Datasheet] |
-
-## Nokia & Ciena (Service Provider / Optical Edge)
-
-| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Nokia 7750 SR / SR OS** | SR OS / SR Linux | **Unknown** | **Unknown** | **Ready (Hybrid):** IPsec RFC 9370 & ANYsec | Tightly integrates with NetGuard Certificate Manager and supports external QKD via ETSI APIs. [Nokia PQC Application Notes, Jan 2026] |
-| **Ciena Waveserver 5** | WaveLogic 6 | **Unknown** | **Unknown** | **Ready:** L1 Optical PQC & QKD | Wire-speed Layer 1 optical encryption scaling up to 1.6Tbps supporting NIST-certified PQC algorithms and QKD system interworking. [Ciena WaveLogic 6 Specs] |
-
-## HPE Aruba & Extreme Networks
-
-| Equipment Family | OS / Version | Secure Boot & Image Integrity | Management Plane (SSH/TLS) | Data Plane (IPsec/MACsec) | Notes / Citations |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **HPE Aruba CX Switches** | AOS-CX | **Unknown** | **Unknown** | **Partial:** AES-256 MACsec | No public roadmap data for native ML-KEM/ML-DSA integration in AOS-CX as of mid-2026. |
-| **Extreme Networks 5420/5720** | EXOS / VOSS | **Unknown** | **Unknown** | **Partial:** AES-256 MACsec | No public roadmap data for native ML-KEM/ML-DSA integration. |
 
 ---
 
