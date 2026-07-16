@@ -29,18 +29,18 @@ This is a first pass that was AI generated (via a combination of Gemini and Clau
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **ACX, PTX, & QFX Series** | Junos OS Evolved 25.4+ | **Ready:** ML-DSA-87 (Off-box verification) | **Ready (Mitigation):** "Quantum Buffer" for SSH | **Partial:** Out-of-band QKD API | CNSA 2.0 compliant image signatures. SSH uses a finite-field buffer rather than pure ML-KEM. [Junos EVO 25.4 Release Notes] |
 | **SRX Series Firewalls** | Junos OS 22.4R1+ | **Roadmap:** FIPS 204 signing (2026) | **Roadmap** | **Ready (Hybrid):** QKD Integration & PPK (RFC 8784) | Supports dynamic fetching of quantum keys from QKD devices for MACsec/IPsec. [Juniper SRX Docs] |
-| PTX10000 Series Routers | Junos OS EVO 25.4+ | 🟢 Ready | sntrup761, X25519, ML-DSA-87 | Shor-resistant SSH key exchange; off-box PQC image verification. |
-| PTX10008 Router | Junos OS EVO 25.4+ | 🟢 Ready | sntrup761, ML-DSA-87 | CNSA 2.0 compliant digital signatures for OS integrity. |
-| ACX7000 Series Routers | Junos OS EVO 25.4+ | 🟢 Ready | sntrup761, X25519, ML-DSA-87 | Quantum Buffer in SSH limits FFC vulnerability. |
-| ACX5000 Series Routers | Junos OS EVO 25.4+ | 🟢 Ready | sntrup761, X25519 | Hybrid classical/post-quantum SSH support. |
-| QFX10000 Series Switches | Junos OS / EVO | 🟢 Ready | sntrup761, ML-DSA-87 | MACsec and SSH PQC implementations enabled. |
-| QFX5200 Series Switches | Junos OS / EVO | 🟢 Ready | sntrup761, ML-DSA-87 | PQC-signed Junos OS Evolved software images. |
-| QFX5100 Series Switches | Junos OS / EVO | 🟡 In Progress | sntrup761 | Partial rollout depending on specific image capabilities. |
-| MX960 Universal Router | Junos OS | 🟡 In Progress | QKD API, Hybrid PQC | Integrates with Quantum Key Distribution (QKD) via ETSI GS QKD 014. |
-| MX10003 Universal Router | Junos OS | 🟡 In Progress | QKD API, Hybrid PQC | IPsec VPN/MACsec integration with QKD and EvolutionQ. |
-| SRX5000 Series Firewalls | Junos OS | 🟡 In Progress | Post-Quantum PPK | IKEv2 RFC 8784 post-quantum preshared keys (PPKs) support. |
-| SRX4000 Series Firewalls | Junos OS | 🟡 In Progress | Post-Quantum PPK | Post-quantum VPN security scaling. |
-| SRX1500 Firewall | Junos OS | 🟡 In Progress | Post-Quantum PPK | Out-of-band key mechanisms and PPK mixing. |
+| PTX10000 Series Routers | Junos OS EVO 25.4+ | | 🟢 Ready | sntrup761, X25519, ML-DSA-87 | Shor-resistant SSH key exchange; off-box PQC image verification. |
+| PTX10008 Router | Junos OS EVO 25.4+ | | 🟢 Ready | sntrup761, ML-DSA-87 | CNSA 2.0 compliant digital signatures for OS integrity. |
+| ACX7000 Series Routers | Junos OS EVO 25.4+ | | 🟢 Ready | sntrup761, X25519, ML-DSA-87 | Quantum Buffer in SSH limits FFC vulnerability. |
+| ACX5000 Series Routers | Junos OS EVO 25.4+ | | 🟢 Ready | sntrup761, X25519 | Hybrid classical/post-quantum SSH support. |
+| QFX10000 Series Switches | Junos OS / EVO | | 🟢 Ready | sntrup761, ML-DSA-87 | MACsec and SSH PQC implementations enabled. |
+| QFX5200 Series Switches | Junos OS / EVO | | 🟢 Ready | sntrup761, ML-DSA-87 | PQC-signed Junos OS Evolved software images. |
+| QFX5100 Series Switches | Junos OS / EVO | | 🟡 In Progress | sntrup761 | Partial rollout depending on specific image capabilities. |
+| MX960 Universal Router | Junos OS | | | 🟡 In Progress | QKD API, Hybrid PQC | Integrates with Quantum Key Distribution (QKD) via ETSI GS QKD 014. |
+| MX10003 Universal Router | Junos OS | | 🟡 In Progress | QKD API, Hybrid PQC | IPsec VPN/MACsec integration with QKD and EvolutionQ. |
+| SRX5000 Series Firewalls | Junos OS | | 🟡 In Progress | Post-Quantum PPK | IKEv2 RFC 8784 post-quantum preshared keys (PPKs) support. |
+| SRX4000 Series Firewalls | Junos OS | | 🟡 In Progress | Post-Quantum PPK | Post-quantum VPN security scaling. |
+| SRX1500 Firewall | Junos OS | | 🟡 In Progress | Post-Quantum PPK | Out-of-band key mechanisms and PPK mixing. |
 
 ## Palo Alto Networks
 
